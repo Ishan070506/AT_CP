@@ -1,0 +1,10 @@
+{
+  "name": "MindBridge - Digital Psychological Intervention System",
+  "short_name": "MindBridge",
+  "description": "A proactive student mental wellness platform with AI support, distress prediction, and safe intervention workflows.",
+  "theme_color": "#8b7bff",
+  "background_color": "#f5f4ff",
+  "display": "standalone",
+  "start_url": "/",
+  "icons": []
+}

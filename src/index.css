@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+    --surface: 248 247 255;
+    --surface-elevated: 255 255 255;
+    --ink: 19 27 46;
+    --muted: 92 103 132;
+    --ring: 115 114 245;
+  }
+
+  .dark {
+    color-scheme: dark;
+    --surface: 8 11 24;
+    --surface-elevated: 13 18 34;
+    --ink: 240 244 255;
+    --muted: 155 167 194;
+    --ring: 124 143 255;
+  }
+
+  * {
+    @apply border-transparent;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply min-h-screen bg-surface text-ink antialiased;
+    font-family: "Manrope", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background-image:
+      radial-gradient(circle at 10% 10%, rgba(139, 123, 255, 0.18), transparent 28%),
+      radial-gradient(circle at 90% 5%, rgba(84, 184, 255, 0.14), transparent 26%),
+      radial-gradient(circle at 45% 90%, rgba(255, 143, 133, 0.12), transparent 32%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(245, 244, 255, 1));
+  }
+
+  .dark body {
+    background-image:
+      radial-gradient(circle at 10% 10%, rgba(139, 123, 255, 0.2), transparent 28%),
+      radial-gradient(circle at 90% 5%, rgba(84, 184, 255, 0.14), transparent 26%),
+      radial-gradient(circle at 45% 90%, rgba(255, 143, 133, 0.08), transparent 32%),
+      linear-gradient(180deg, rgba(8, 11, 24, 1), rgba(10, 13, 29, 1));
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  .font-display {
+    font-family: "Sora", "Manrope", ui-sans-serif, sans-serif;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    @apply outline-none;
+  }
+
+  ::selection {
+    background: rgba(115, 114, 245, 0.22);
+  }
+}
+
+@layer components {
+  .app-shell {
+    @apply min-h-screen bg-mesh text-ink;
+  }
+
+  .glass-input {
+    @apply rounded-2xl border border-white/60 bg-white/70 px-4 py-3 text-sm text-ink placeholder:text-muted/80 shadow-soft backdrop-blur-xl transition focus:border-lavender/50 focus:ring-4 focus:ring-lavender/10 dark:border-white/10 dark:bg-white/5;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-lavender via-indigo to-sky px-5 py-3 text-sm font-semibold text-white shadow-glow transition hover:scale-[1.02] hover:shadow-soft focus:ring-4 focus:ring-lavender/20;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-2xl border border-white/60 bg-white/70 px-5 py-3 text-sm font-semibold text-ink shadow-soft backdrop-blur-xl transition hover:-translate-y-0.5 hover:bg-white/90 focus:ring-4 focus:ring-lavender/10 dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-2 rounded-full border border-white/60 bg-white/70 px-3 py-1.5 text-xs font-semibold text-ink shadow-soft backdrop-blur-xl dark:border-white/10 dark:bg-white/5;
+  }
+
+  .soft-divider {
+    @apply border-t border-white/50 dark:border-white/10;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .hide-scrollbar {
+    scrollbar-width: none;
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
