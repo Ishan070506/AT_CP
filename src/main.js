@@ -14,18 +14,6 @@ const EXAMPLES = {
     grammar: "S -> aSb | ε",
     sampleInput: "aaabbb",
   },
-  balanced: {
-    label: "Balanced parentheses",
-    grammar: "S -> (S)S | ε",
-    sampleInput: "(()())",
-  },
-  arithmetic: {
-    label: "Simple arithmetic expressions",
-    grammar: ["E -> TQ", "Q -> +TQ | ε", "T -> FR", "R -> *FR | ε", "F -> (E) | i"].join(
-      "\n",
-    ),
-    sampleInput: "i+i*i",
-  },
 };
 
 const state = {
